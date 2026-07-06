@@ -1,0 +1,72 @@
+/* 
+  RunCode IDE - Responsive Grid System
+  Mobile-First Breakpoint adjustments for fluid layouts.
+*/
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .hero-heading {
+    font-size: 56px;
+  }
+}
+
+/* Tablet (max-width: 992px) */
+@media (max-width: 992px) {
+  .hero-heading {
+    font-size: 44px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  
+  .footer-about {
+    grid-column: span 2;
+  }
+}
+
+/* Mobile landscape (max-width: 768px) */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Controlled by mobile hamburger */
+  }
+  
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .hero-heading {
+    font-size: 36px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-about {
+    grid-column: span 1;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+/* Mobile portrait (max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .hero-heading {
+    font-size: 28px;
+  }
+  
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
