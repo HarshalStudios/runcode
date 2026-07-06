@@ -113,40 +113,414 @@
         </div>
       </div>
 
-      <!-- Mockup Compiler Frame -->
-      <div class="mockup-container floating-mock">
-        <div class="mockup-header">
-          <div class="mockup-dots">
-            <div class="dot dot-red"></div>
-            <div class="dot dot-yellow"></div>
-            <div class="dot dot-green"></div>
-            <span class="mockup-file" id="static-file-label">main.py</span>
-          </div>
-          <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted)">Workspace: Sandbox</span>
-        </div>
+      <!-- Side-by-side Case Study Showcase & Android Smartphone Emulator Chassis -->
+      <div id="mockup-editor-wrapper">
         
-        <div class="mockup-tabs">
-          <button class="static-lang-tab active" data-lang="python">Python</button>
-          <button class="static-lang-tab" data-lang="java">Java</button>
-          <button class="static-lang-tab" data-lang="cpp">C++</button>
-          <button class="static-lang-tab" data-lang="javascript">JavaScript</button>
-        </div>
-
-        <div class="mockup-split">
-          <div class="editor-pane">
-            <textarea id="static-code-editor" spellcheck="false"></textarea>
-            <div class="editor-footer">
-              <span>Line 1, Col 1 · UTF-8</span>
-              <div style="display:flex;gap:8px">
-                <button id="static-reset-btn" class="cta-button cta-secondary" style="padding:6px 12px;font-size:11px">Reset</button>
-                <button id="static-run-btn" class="cta-button cta-primary" style="padding:6px 16px;font-size:11px">Run Code</button>
+        <!-- Left Column: WhatsApp Homework Showcase -->
+        <div class="showcase-left-col">
+          <div class="case-study-card">
+            <div class="case-study-tag">
+              <span class="pulse-dot"></span>
+              <span>Workspace Problem Solving</span>
+            </div>
+            <h3 style="font-size:18px; font-weight:800; color:var(--text-white); margin-bottom:8px">Solve WhatsApp Lab Files</h3>
+            <p style="font-size:12px; line-height:1.5; color:var(--text-gray); margin-bottom:12px">
+              CS students often receive homework assignments directly inside instant messengers like WhatsApp or Telegram, forcing them to find a PC just to verify compilations.
+            </p>
+            
+            <div class="whatsapp-chat-container">
+              <div class="chat-header">
+                <span class="pulse-dot"></span>
+                <span>Classmate Assignment Thread</span>
               </div>
+              <div class="chat-msg">
+                Bro, can you check if this Java assignment compiles without error? Our lab submissions are due tonight! 😭
+              </div>
+              <div class="chat-attachment">
+                <div class="attachment-info">
+                  <div class="attachment-icon-box">☕</div>
+                  <div class="attachment-text">
+                    <span class="attachment-filename">StudentRecords.java</span>
+                    <span class="attachment-meta">1.2 KB · Java Coursework</span>
+                  </div>
+                </div>
+              </div>
+              <button id="whatsapp-trigger-btn" class="whatsapp-sim-btn">
+                Tap to Open in RunCode Emulator
+              </button>
             </div>
           </div>
-          <div class="console-pane">
-            <pre id="static-terminal-console"></pre>
-            <span style="font-family:var(--font-mono);font-size:9px;color:var(--text-muted)">Terminal: Console Sandbox v2.4</span>
+        </div>
+
+        <!-- Right Column: Interactive Smartphone Chassis -->
+        <div class="smartphone-bezel">
+          
+          <!-- Punch-hole Camera Notch -->
+          <div class="camera-notch">
+            <div class="camera-lens"></div>
           </div>
+
+          <!-- Top Status Bar -->
+          <div class="android-status-bar">
+            <span>12:30 PM</span>
+            <div class="status-bar-right">
+              <span>LTE</span>
+              <div class="battery-icon-wrapper">
+                <div class="battery-charge"></div>
+              </div>
+              <span>80%</span>
+            </div>
+          </div>
+
+          <!-- Toast Notifier Alert Bubble -->
+          <div id="emulator-toast" class="emulator-toast" style="display: none;">
+            <span>👋 Welcome to RunCode</span>
+          </div>
+
+          <!-- Application Screen Wrapper -->
+          <div class="app-screen-container">
+            
+            <!-- Pro Upgrade Popup Sheet -->
+            <div id="pro-overlay" class="pro-overlay" style="display: none;">
+              <div class="pro-icon-box">★</div>
+              <h4 class="pro-title">Activate RunCode Pro</h4>
+              <p class="pro-desc">Unlock unlimited offline compiler binary accesses, offline packages, and smart code auto-completion.</p>
+              <button id="pro-buy-btn" class="pro-buy-btn">Unlock Premium - $4.99</button>
+              <button id="pro-dismiss-btn" class="pro-dismiss-btn">Keep Free Sandbox</button>
+            </div>
+
+            <!-- VIEW A: HOME VIEW -->
+            <div id="screen-home" class="app-view">
+              <div class="emulator-header-row">
+                <span style="font-family:var(--font-display); font-size:13px; font-weight:800; color:var(--text-white)">RunCode</span>
+                <button class="pro-badge-btn pro-overlay-trigger">★ GO PRO</button>
+              </div>
+              <div class="emulator-body-content">
+                <div style="text-align:left">
+                  <h5 style="font-size:14px; font-weight:800; color:var(--text-white)">Welcome Back 👋</h5>
+                  <p style="font-size:9px; color:var(--text-gray)">Learn. Code. Execute. offline sandbox environment.</p>
+                </div>
+
+                <button class="project-card-gradient" id="home-create-project">
+                  <div class="project-card-icon-box">➕</div>
+                  <div>
+                    <span style="font-size:11px; font-weight:800; color:var(--text-white); display:block">Create New Project</span>
+                    <span style="font-size:8px; color:rgba(255,255,255,0.8); display:block">Blank local Workspace folder</span>
+                  </div>
+                </button>
+
+                <div class="category-buttons-grid">
+                  <button class="category-btn" id="home-nav-files">
+                    <div class="category-icon-wrapper cat-blue">📁</div>
+                    <span style="font-size:9px; font-weight:700; color:var(--text-white)">Workspace</span>
+                  </button>
+                  <button class="category-btn" id="home-nav-templates">
+                    <div class="category-icon-wrapper cat-purple">🛠️</div>
+                    <span style="font-size:9px; font-weight:700; color:var(--text-white)">Templates</span>
+                  </button>
+                </div>
+
+                <div style="text-align:left">
+                  <span style="font-size:8px; font-family:var(--font-mono); font-weight:700; color:var(--text-gray); text-transform:uppercase">Start Coding In...</span>
+                  <div class="start-coding-row" style="margin-top:6px">
+                    <div class="lang-shortcut-chip select-lang-shortcut" data-file="Swap_Using_Pointers.c">
+                      <span class="shortcut-dot" style="background-color:#A8B9CC"></span>
+                      <span>ANSI C</span>
+                    </div>
+                    <div class="lang-shortcut-chip select-lang-shortcut" data-file="StudentRecords.java">
+                      <span class="shortcut-dot" style="background-color:#007396"></span>
+                      <span>Java OOP</span>
+                    </div>
+                    <div class="lang-shortcut-chip select-lang-shortcut" data-file="Complete_Portfolio_Website.html">
+                      <span class="shortcut-dot" style="background-color:#E34F26"></span>
+                      <span>HTML5</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="info-banner-mini">
+                  <span style="font-size:11px">💡</span>
+                  <span style="font-size:8px; color:var(--text-gray); text-align:left; line-height:1.3">
+                    New here? <span style="color:var(--accent-color); font-weight:700; cursor:pointer" id="home-guide-trigger">Open educational guide book</span>
+                  </span>
+                </div>
+
+                <div class="workspace-list-card">
+                  <div class="workspace-active-badge">
+                    <span>📂</span>
+                    <span>Your Workspace</span>
+                  </div>
+                  <ul class="workspace-files-list">
+                    <li class="open-file-click" data-file="Tic_Tac_Toe_Game.js">Tic_Tac_Toe_Game.js</li>
+                    <li class="open-file-click" data-file="Shopping_Cart_Simulation.js">Shopping_Cart_Simulation.js</li>
+                    <li class="open-file-click" data-file="Student_Database_Demo.js">Student_Database_Demo.js</li>
+                    <li style="color:var(--accent-color); font-weight:700" id="home-more-files-trigger">+ 32 more files...</li>
+                  </ul>
+                  <button class="workspace-resume-btn" id="home-resume-workspace">Resume Workspace</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW B: CODE VIEW -->
+            <div id="screen-code" class="app-view" style="display: none;">
+              <div class="emulator-header-row">
+                <span style="font-family:var(--font-display); font-size:13px; font-weight:800; color:var(--text-white)">Code Files</span>
+                <button class="pro-badge-btn pro-overlay-trigger">★ PRO</button>
+              </div>
+              <div class="emulator-body-content" style="gap:10px">
+                <div class="continue-coding-card">
+                  <div class="continue-coding-left">
+                    <div class="continue-icon-wrapper">💻</div>
+                    <div style="text-align:left">
+                      <span style="font-size:7px; color:var(--text-gray); display:block; text-transform:uppercase">Continue Coding</span>
+                      <span id="code-recent-filename" class="continue-coding-filename">Swap_Using_Pointers.c</span>
+                    </div>
+                  </div>
+                  <button id="code-open-workspace" class="small-action-btn">Open</button>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px">
+                  <button class="small-action-btn" id="code-new-file" style="padding:8px">➕ New File</button>
+                  <button class="small-action-btn" id="code-open-file" style="padding:8px">📁 Open File</button>
+                </div>
+
+                <div style="text-align:left">
+                  <span style="font-size:8px; font-family:var(--font-mono); font-weight:700; color:var(--text-gray); text-transform:uppercase">Quick Boilerplates</span>
+                  <div class="start-coding-row" style="margin-top:6px">
+                    <div class="lang-shortcut-chip select-lang-shortcut" data-file="Swap_Using_Pointers.c">C</div>
+                    <div class="lang-shortcut-chip select-lang-shortcut" data-file="StudentRecords.java">Java</div>
+                    <div class="lang-shortcut-chip select-lang-shortcut" data-file="Complete_Portfolio_Website.html">HTML</div>
+                  </div>
+                </div>
+
+                <div style="display:flex; align-items:center; justify-content:between; margin-top:4px">
+                  <span style="font-size:9px; font-weight:800; color:var(--text-white)">Open Files (35)</span>
+                  <button style="font-size:8px; color:var(--accent-color); background:transparent; border:none; cursor:pointer" id="code-close-inactive">Close Inactive</button>
+                </div>
+
+                <!-- Dynamic Workspace file rows -->
+                <div id="code-file-list-container" style="display:flex; flex-direction:column; gap:6px">
+                  <!-- Generated via JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW C: TEMPLATES VIEW -->
+            <div id="screen-templates" class="app-view" style="display: none;">
+              <div class="emulator-header-row">
+                <span style="font-family:var(--font-display); font-size:13px; font-weight:800; color:var(--text-white)">Templates</span>
+                <button class="pro-badge-btn pro-overlay-trigger">★ GET PRO</button>
+              </div>
+              <div class="emulator-body-content" style="gap:10px">
+                <div class="templates-search-box">
+                  <span class="search-icon-pos">🔍</span>
+                  <input type="text" id="templates-search-input" class="templates-search-input" placeholder="Search lab templates...">
+                </div>
+
+                <div class="template-filters-row" id="templates-lang-filters">
+                  <!-- Dynamic lang filters pills -->
+                </div>
+
+                <div class="template-filters-row" id="templates-diff-filters">
+                  <!-- Dynamic diff filters pills -->
+                </div>
+
+                <!-- Template List Container -->
+                <div id="templates-cards-container" style="display:flex; flex-direction:column; gap:10px">
+                  <!-- Generated dynamically via JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW D: FILES VIEW -->
+            <div id="screen-files" class="app-view" style="display: none;">
+              <div class="emulator-header-row">
+                <span style="font-family:var(--font-display); font-size:13px; font-weight:800; color:var(--text-white)">All Files</span>
+                <span style="font-family:var(--font-mono); font-size:9px; color:var(--accent-color); font-weight:700">35 items</span>
+              </div>
+              <div class="emulator-body-content" style="gap:12px">
+                <div class="files-root-path">
+                  Workspace root: <span style="color:var(--accent-color)">/storage/emulated/0/RunCode/</span>
+                </div>
+
+                <!-- Dynamic Workspace grid list -->
+                <div id="files-list-container" style="display:flex; flex-direction:column; gap:6px">
+                  <!-- Generated via JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW E: SETTINGS VIEW -->
+            <div id="screen-settings" class="app-view" style="display: none;">
+              <div class="emulator-header-row">
+                <span style="font-family:var(--font-display); font-size:13px; font-weight:800; color:var(--text-white)">Settings</span>
+                <span style="font-family:var(--font-mono); font-size:8px; color:var(--text-gray)">v1.2.4</span>
+              </div>
+              <div class="emulator-body-content" style="gap:12px">
+                <div class="settings-premium-card">
+                  <span style="font-size:11px; font-weight:800; color:#A855F7">Go Pro Membership</span>
+                  <p style="font-size:8.5px; color:var(--text-gray); line-height:1.4">Get lifetime local compiler binary access, zero telemetry diagnostic aids.</p>
+                  <button class="small-action-btn pro-overlay-trigger" style="background:linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%); border:none; color:white; font-size:8.5px">Unlock Pro Now</button>
+                </div>
+
+                <div class="settings-sec-title">Local Compilers</div>
+                <div class="settings-list-card">
+                  <div class="settings-row-item">
+                    <span class="settings-item-label">Python 3 Sandbox</span>
+                    <span class="settings-item-value-green">✔ Downloaded</span>
+                  </div>
+                  <div class="settings-row-item">
+                    <span class="settings-item-label">ANSI C GCC Linker</span>
+                    <span class="settings-item-value-green">✔ Downloaded</span>
+                  </div>
+                  <div class="settings-row-item">
+                    <span class="settings-item-label">OpenJDK 17 JRE</span>
+                    <span class="settings-item-value-blue">142 MB on disk</span>
+                  </div>
+                </div>
+
+                <div class="settings-sec-title">Preferences</div>
+                <div class="settings-list-card">
+                  <div class="settings-row-item" id="settings-theme-select">
+                    <span class="settings-item-label">Theme Select</span>
+                    <span class="settings-item-value-grey" id="settings-active-theme">Slate Dark (Native)</span>
+                  </div>
+                  <div class="settings-row-item">
+                    <span class="settings-item-label">Auto Save On Play</span>
+                    <span class="settings-item-value-green">Enabled</span>
+                  </div>
+                </div>
+
+                <div style="text-align:center; padding-top:10px; border-top:1px solid rgba(42, 47, 69, 0.2)">
+                  <p style="font-size:8px; color:var(--text-muted)">Designed by <span style="color:white; font-weight:700">Harshal Shinde</span></p>
+                  <p style="font-size:7.5px; color:var(--text-muted); margin-top:2px">RunCode offline educational tools initiative</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW F: EDITOR VIEW -->
+            <div id="screen-editor" class="app-view" style="display: none;">
+              
+              <!-- Editor Header / Tab Strip -->
+              <div class="editor-title-bar">
+                <div class="editor-title-left">
+                  <button class="editor-back-btn" id="editor-back-button" title="Back to Workspace">&larr;</button>
+                  <div class="editor-tabs-strip" id="editor-tab-headers">
+                    <!-- Dynamic tabs generated via JS -->
+                  </div>
+                  <button class="editor-add-tab-btn" id="editor-add-tab" title="Create New Tab">+</button>
+                </div>
+                
+                <div class="editor-header-right-tools">
+                  <button class="preview-pill-btn" id="editor-preview-webview">
+                    <span>🌐</span>
+                    <span>Preview</span>
+                  </button>
+                  <button class="editor-back-btn" id="editor-dots-diagnostic" title="More Options" style="padding:4px">&#8942;</button>
+                </div>
+              </div>
+
+              <!-- Main Code Workspace Gutter & Editor -->
+              <div class="editor-workspace-container">
+                <div class="editor-workspace-text-panel">
+                  <div class="line-gutter-numbers">
+                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                    <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                    <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+                    <span>16</span><span>17</span><span>18</span>
+                  </div>
+                  <textarea id="editor-textarea" class="editor-textarea-field" spellcheck="false" wrap="off"></textarea>
+                </div>
+
+                <!-- Symbol Keyboard Belt -->
+                <div class="keyboard-keys-belt" id="editor-keyboard-belt">
+                  <button class="belt-key-btn" data-char="  ">TAB</button>
+                  <button class="belt-key-btn" data-char="{">{</button>
+                  <button class="belt-key-btn" data-char="}">}</button>
+                  <button class="belt-key-btn" data-char="(">(</button>
+                  <button class="belt-key-btn" data-char=")">)</button>
+                  <button class="belt-key-btn" data-char=";">;</button>
+                  <button class="belt-key-btn" data-char="[">[</button>
+                  <button class="belt-key-btn" data-char="]">]</button>
+                  <button class="belt-key-btn" data-char="+">+</button>
+                  <button class="belt-key-btn" data-char="=">=</button>
+                </div>
+
+                <!-- Floating Play Compiler FAB -->
+                <button class="editor-floating-play-fab" id="editor-play-fab" title="Run code offline">
+                  <span>▶</span>
+                </button>
+
+                <!-- SLIDABLE OFFLINE TERMINAL DRAWER -->
+                <div class="terminal-drawer-sheet terminal-sheet-collapsed" id="terminal-sheet">
+                  
+                  <!-- Clickable terminal header -->
+                  <button class="terminal-header-clickable" id="terminal-header-toggle">
+                    <div class="terminal-header-title">
+                      <span>📟</span>
+                      <span>Offline Terminal</span>
+                    </div>
+                    <div class="terminal-header-right">
+                      <span>Local Compiler</span>
+                      <span id="terminal-chevron-icon">▲</span>
+                    </div>
+                  </button>
+
+                  <!-- Dynamic Terminal stdout content -->
+                  <div class="terminal-output-log-pane" id="terminal-log-pane">
+                    <!-- Dynamic logs outputted here -->
+                  </div>
+
+                  <!-- Exit Metadata bar -->
+                  <div class="terminal-footer-meta">
+                    <span>Exit code: 0</span>
+                    <span>100% Native binary sandbox</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Editor bottom status bar -->
+              <div class="editor-status-bar-indicator">
+                <span id="editor-mode-label" style="color:var(--accent-color); font-weight:700">PYTHON MODE</span>
+                <span>UTF-8 | Ln 1, Col 1</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Smartphone System Navigation Bottom Tabs -->
+          <div class="smartphone-bottom-nav-bar">
+            <button class="nav-tab-button active-nav-tab" data-target="home">
+              <div class="nav-tab-button-icon-pill">🏠</div>
+              <span class="nav-tab-button-label">Home</span>
+            </button>
+            <button class="nav-tab-button" data-target="code">
+              <div class="nav-tab-button-icon-pill">💻</div>
+              <span class="nav-tab-button-label">Code</span>
+            </button>
+            <button class="nav-tab-button" data-target="templates">
+              <div class="nav-tab-button-icon-pill">🛠️</div>
+              <span class="nav-tab-button-label">Templates</span>
+            </button>
+            <button class="nav-tab-button" data-target="files">
+              <div class="nav-tab-button-icon-pill">📂</div>
+              <span class="nav-tab-button-label">Files</span>
+            </button>
+            <button class="nav-tab-button" data-target="settings">
+              <div class="nav-tab-button-icon-pill">⚙️</div>
+              <span class="nav-tab-button-label">Settings</span>
+            </button>
+          </div>
+
+          <!-- Android Bottom Soft System Keys Navigation -->
+          <div class="android-soft-system-keys">
+            <button class="soft-system-key-btn" id="softkey-back" title="Back">&lsaquo;</button>
+            <button class="soft-system-key-btn" id="softkey-home" title="Home">&#9675;</button>
+            <button class="soft-system-key-btn" id="softkey-recents" title="Recents">&#9634;</button>
+          </div>
+
         </div>
       </div>
 
