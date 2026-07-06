@@ -1,21 +1,29 @@
 /* 
   RunCode IDE - Responsive Grid System
-  Mobile-First Breakpoint adjustments for fluid layouts.
+  Mobile-First adjustments for flexible layout breakpoints.
 */
 
-/* Large Desktop */
-@media (min-width: 1200px) {
-  .hero-heading {
-    font-size: 56px;
+/* --- Desktop Scaling (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: inline-flex !important;
   }
 }
 
-/* Tablet (max-width: 992px) */
-@media (max-width: 992px) {
+/* --- Medium Tablet Breakpoint (max-width: 1023px) --- */
+@media (max-width: 1023px) {
   .hero-heading {
-    font-size: 44px;
+    font-size: 40px;
   }
   
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .languages-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
@@ -26,36 +34,56 @@
   }
 }
 
-/* Mobile landscape (max-width: 768px) */
+/* --- Small Tablet / Mobile Breakpoint (max-width: 768px) --- */
 @media (max-width: 768px) {
   .nav-menu {
-    display: none; /* Controlled by mobile hamburger */
+    display: none; /* Hidden on tablets/mobile, menu toggled via drawer */
   }
-  
+
   .desktop-only {
     display: none !important;
   }
-  
+
+  .mobile-menu-toggle {
+    display: block !important; /* Shows mobile humburger */
+  }
+
   .hero-heading {
-    font-size: 36px;
+    font-size: 34px;
+    letter-spacing: -0.02em;
   }
-  
-  .footer-grid {
-    grid-template-columns: 1fr;
+
+  .hero-desc {
+    font-size: 16px;
+    margin-bottom: 32px;
   }
-  
-  .footer-about {
-    grid-column: span 1;
-  }
-  
-  .footer-bottom {
-    flex-direction: column;
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    text-align: center;
+  }
+
+  .mockup-split {
+    grid-template-columns: 1fr; /* Single column on mobile editor */
+  }
+
+  .editor-pane {
+    border-right: none;
+    border-bottom: 1px solid rgba(42, 47, 69, 0.4);
+    min-height: 280px;
+  }
+
+  .console-pane {
+    min-height: 180px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
 
-/* Mobile portrait (max-width: 480px) */
+/* --- Tiny Mobile Portrait Breakpoint (max-width: 480px) --- */
 @media (max-width: 480px) {
   .container {
     padding: 0 16px;
@@ -64,9 +92,36 @@
   .hero-heading {
     font-size: 28px;
   }
+
+  .hero-ctas {
+    flex-direction: column;
+    gap: 12px;
+  }
   
   .cta-button {
     width: 100%;
     justify-content: center;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .languages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-about {
+    grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
   }
 }
