@@ -4,54 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Help & Support - RunCode IDE</title>
+  
+  <!-- Custom stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/animations.css">
-  <style>
-    .support-section {
-      padding: 80px 0;
-    }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 2fr 3fr;
-      gap: 32px;
-      align-items: start;
-    }
-    .support-card {
-      padding: 24px;
-      border-radius: 12px;
-      border: 1px solid var(--border-color);
-      background-color: rgba(30, 34, 53, 0.2);
-      margin-bottom: 24px;
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 11px;
-      font-family: var(--font-mono);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 8px;
-    }
-    .form-control {
-      width: 100%;
-      background-color: #0D0D12;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 12px;
-      color: var(--text-white);
-      font-family: var(--font-sans);
-      font-size: 14px;
-      transition: var(--transition);
-    }
-    .form-control:focus {
-      outline: none;
-      border-color: var(--accent-color);
-    }
-  </style>
 </head>
 <body>
 
@@ -91,15 +48,40 @@
       <div class="header-ctas desktop-only">
         <a href="https://play.google.com" target="_blank" class="cta-button cta-primary">Download App</a>
       </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="static-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+        <svg id="menu-icon-open" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:none">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="static-mobile-menu" class="mobile-menu">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="index.html#features" class="mobile-nav-link">Features</a>
+        <a href="support.html" class="mobile-nav-link">Support</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="privacy.html" class="mobile-nav-link">Privacy Policy</a>
+        <a href="terms.html" class="mobile-nav-link">Terms of Service</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="https://play.google.com" target="_blank" class="cta-button cta-primary" style="width: 100%;">Download App</a>
+      </div>
     </div>
   </header>
 
   <!-- Support Portal Section -->
-  <section class="support-section">
+  <main class="support-section scroll-fade">
     <div class="container">
       <a href="index.html" class="cta-button cta-secondary" style="margin-bottom:48px; font-size:12px">&larr; Back to Homepage</a>
       
-      <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))">
+      <div class="grid-2">
         
         <!-- Left info guidelines -->
         <div>
@@ -108,19 +90,19 @@
           
           <div class="support-card">
             <h3 style="color:var(--accent-color); font-size:16px; margin-bottom:8px">Bug Reports</h3>
-            <p style="font-size:13px; line-height:1.5">When reporting code execution crashes or compilation failures, please copy-paste the terminal traceback, mention your Android device model, and detail your workspace directory hierarchy.</p>
+            <p style="font-size:13px; line-height:1.5; color:var(--text-gray)">When reporting code execution crashes or compilation failures, please copy-paste the terminal traceback, mention your Android device model, and detail your workspace directory hierarchy.</p>
           </div>
 
           <div class="support-card">
             <h3 style="color:var(--accent-color); font-size:16px; margin-bottom:8px">Response Expectation</h3>
-            <p style="font-size:13px; line-height:1.5">We are a small development team but we prioritize educational and student coursework inquiries. Our standard support response window is within 24 to 48 working hours.</p>
+            <p style="font-size:13px; line-height:1.5; color:var(--text-gray)">We are a small development team but we prioritize educational and student coursework inquiries. Our standard support response window is within 24 to 48 working hours.</p>
           </div>
         </div>
 
         <!-- Right Form mock -->
         <div class="card" style="padding:32px">
           <h2 style="font-size:20px; margin-bottom:8px">Submit Support Ticket</h2>
-          <p style="font-size:13px; margin-bottom:24px">Fill out our academic support dispatch form to send detailed reports directly to our engineers.</p>
+          <p style="font-size:13px; margin-bottom:24px; color:var(--text-gray)">Fill out our academic support dispatch form to send detailed reports directly to our engineers.</p>
           
           <form id="static-support-form" onsubmit="event.preventDefault(); document.getElementById('ticket-success').style.display='block'; this.style.display='none';">
             <div class="form-group">
@@ -130,7 +112,7 @@
             
             <div class="form-group">
               <label>Issue Category</label>
-              <select class="form-control" style="appearance: none; background-image: radial-gradient(circle, var(--accent-color) 2px, transparent 3px); background-repeat: no-repeat; background-position: right 12px center;">
+              <select class="form-control" required>
                 <option>General Inquiries</option>
                 <option>Local Compiler Failures</option>
                 <option>File Explorer / Storage Issues</option>
@@ -149,13 +131,13 @@
           <div id="ticket-success" style="display:none; text-align:center; padding:40px 0" class="fade-in">
             <span style="font-size:48px">🚀</span>
             <h3 style="margin-top:16px; font-size:18px">Ticket Transmitted!</h3>
-            <p style="font-size:13px; margin-top:8px">Your academic support inquiry was successfully routed to the compiler team. We will write back shortly.</p>
+            <p style="font-size:13px; margin-top:8px; color:var(--text-gray)">Your academic support inquiry was successfully routed to the compiler team. We will write back shortly.</p>
           </div>
         </div>
 
       </div>
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -207,5 +189,8 @@
     </div>
   </footer>
 
+  <!-- Scripts integration -->
+  <script src="js/animations.js"></script>
+  <script src="js/navigation.js"></script>
 </body>
 </html>
