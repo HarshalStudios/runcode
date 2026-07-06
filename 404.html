@@ -4,15 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 - Compiler Exception</title>
+  
+  <!-- Custom stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/animations.css">
-  <style>
-    .error-section {
-      padding: 120px 0;
-      text-align: center;
-    }
-  </style>
 </head>
 <body>
 
@@ -52,19 +48,44 @@
       <div class="header-ctas desktop-only">
         <a href="https://play.google.com" target="_blank" class="cta-button cta-primary">Download App</a>
       </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="static-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+        <svg id="menu-icon-open" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:none">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="static-mobile-menu" class="mobile-menu">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="index.html#features" class="mobile-nav-link">Features</a>
+        <a href="support.html" class="mobile-nav-link">Support</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="privacy.html" class="mobile-nav-link">Privacy Policy</a>
+        <a href="terms.html" class="mobile-nav-link">Terms of Service</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="https://play.google.com" target="_blank" class="cta-button cta-primary" style="width: 100%;">Download App</a>
+      </div>
     </div>
   </header>
 
   <!-- Error section content -->
-  <section class="error-section">
-    <div class="container scroll-fade">
+  <main class="error-section scroll-fade">
+    <div class="container">
       <span style="font-family:var(--font-mono); font-size:16px; color:var(--accent-color); font-weight:700">COMPILE_ERROR: PATH_NOT_RESOLVED (404)</span>
       <h1 style="font-size:48px; margin-top:16px; margin-bottom:24px">Page Not Found</h1>
       <p style="font-size:16px; max-width:550px; margin:0 auto 40px auto; line-height:1.6">The compiler has searched all file systems, directory structures, and active routers but could not resolve this destination.</p>
       
-      <a href="index.html" class="cta-button cta-primary">&larr; Return to Workspace Home</a>
+      <a href="index.html" class="cta-button cta-primary" style="display: inline-flex; width: auto; margin: 0 auto;">&larr; Return to Workspace Home</a>
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -116,5 +137,8 @@
     </div>
   </footer>
 
+  <!-- Scripts integration -->
+  <script src="js/animations.js"></script>
+  <script src="js/navigation.js"></script>
 </body>
 </html>
