@@ -4,42 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service - RunCode IDE</title>
+  
+  <!-- Custom stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/animations.css">
-  <style>
-    .doc-section {
-      padding: 80px 0;
-    }
-    .doc-card {
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      background-color: rgba(30, 34, 53, 0.2);
-      padding: 40px;
-      line-height: 1.7;
-      color: var(--text-gray);
-    }
-    .doc-card h2 {
-      color: var(--text-white);
-      margin: 32px 0 16px 0;
-      font-size: 20px;
-    }
-    .doc-card h2:first-of-type {
-      margin-top: 0;
-    }
-    .doc-card p {
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
-    .doc-card ul {
-      margin-bottom: 24px;
-      padding-left: 24px;
-    }
-    .doc-card li {
-      margin-bottom: 12px;
-      font-size: 14px;
-    }
-  </style>
 </head>
 <body>
 
@@ -79,47 +48,74 @@
       <div class="header-ctas desktop-only">
         <a href="https://play.google.com" target="_blank" class="cta-button cta-primary">Download App</a>
       </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="static-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+        <svg id="menu-icon-open" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:none">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="static-mobile-menu" class="mobile-menu">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="index.html#features" class="mobile-nav-link">Features</a>
+        <a href="support.html" class="mobile-nav-link">Support</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="privacy.html" class="mobile-nav-link">Privacy Policy</a>
+        <a href="terms.html" class="mobile-nav-link">Terms of Service</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="https://play.google.com" target="_blank" class="cta-button cta-primary" style="width: 100%;">Download App</a>
+      </div>
     </div>
   </header>
 
-  <!-- Terms Document Section -->
-  <section class="doc-section">
+  <!-- Terms of Service Document Section -->
+  <main class="policy-container scroll-fade">
     <div class="container">
       <a href="index.html" class="cta-button cta-secondary" style="margin-bottom:32px; font-size:12px">&larr; Back to Homepage</a>
       
-      <div class="doc-card">
-        <h1 style="color:var(--text-white); font-size:28px; margin-bottom:10px">Terms of Service</h1>
-        <p style="font-family:var(--font-mono); font-size:11px; color:var(--accent-color); margin-bottom:40px">Last Updated: July 6, 2026</p>
+      <div class="policy-card">
+        <h1>Terms of Service</h1>
+        <p class="policy-meta">Last Updated: July 6, 2026</p>
         
-        <h2>1. Educational Use License</h2>
-        <p>RunCode is developed primarily for educational use, homework assignments, school labs, and independent study.</p>
-        <ul>
-          <li>We grant you a personal, non-transferable, non-exclusive license to use the Application for learning, school coursework, and script editing.</li>
-          <li>You may use the compiler sandbox to run homework scripts, mock exam scripts, and test cases safely on your mobile device.</li>
-        </ul>
+        <div class="policy-body">
+          <h2>1. Educational Use License</h2>
+          <p>RunCode is developed primarily for educational use, homework assignments, school labs, and independent study.</p>
+          <ul>
+            <li>We grant you a personal, non-transferable, non-exclusive license to use the Application for learning, school coursework, and script editing.</li>
+            <li>You may use the compiler sandbox to run homework scripts, mock exam scripts, and test cases safely on your mobile device.</li>
+          </ul>
 
-        <h2>2. Ownership of Your Code</h2>
-        <p><strong>Your code remains 100% yours.</strong> RunCode does not claim any intellectual property, distribution rights, copyright, or ownership over the scripts, source code, website layouts, HTML/CSS sandboxes, or files you create inside the Application.</p>
+          <h2>2. Ownership of Your Code</h2>
+          <p><strong>Your code remains 100% yours.</strong> RunCode does not claim any intellectual property, distribution rights, copyright, or ownership over the scripts, source code, website layouts, HTML/CSS sandboxes, or files you create inside the Application.</p>
 
-        <h2>3. Google Play Billing and Advertisements</h2>
-        <p>RunCode is supported by optional, non-intrusive advertisements and Google Play Billing options:</p>
-        <ul>
-          <li><strong>Premium Upgrades:</strong> Optional in-app purchases can be made via Google Play Billing to bypass ads, unlock premium themes, or enable workspace cloud backup features.</li>
-          <li><strong>Pricing Adjustments:</strong> We reserve the right to modify pricing, subscription durations, or promotional offers. All billing operations are fully outsourced to Google Play Services.</li>
-        </ul>
+          <h2>3. Google Play Billing and Advertisements</h2>
+          <p>RunCode is supported by optional, non-intrusive advertisements and Google Play Billing options:</p>
+          <ul>
+            <li><strong>Premium Upgrades:</strong> Optional in-app purchases can be made via Google Play Billing to bypass ads, unlock premium themes, or enable workspace cloud backup features.</li>
+            <li><strong>Pricing Adjustments:</strong> We reserve the right to modify pricing, subscription durations, or promotional offers. All billing operations are fully outsourced to Google Play Services.</li>
+          </ul>
 
-        <h2>4. Acceptable Use Policy</h2>
-        <p>As a sandbox compilation application, you agree NOT to use the RunCode interpreter or project explorer to write, bundle, or compile malicious software, mobile virus payloads, ransomware, spyware, or other packages designed to compromise Android devices.</p>
+          <h2>4. Acceptable Use Policy</h2>
+          <p>As a sandbox compilation application, you agree NOT to use the RunCode interpreter or project explorer to write, bundle, or compile malicious software, mobile virus payloads, ransomware, spyware, or other packages designed to compromise Android devices.</p>
 
-        <h2>5. Disclaimer & Limitation of Liability</h2>
-        <p>RunCode is provided on an "AS IS" and "AS AVAILABLE" basis, without any warranties of any kind. We are not responsible for any homework score reductions, exam script failures, compiler runtime exceptions, storage corruption, data losses, or system errors resulting from the execution of incorrect loops, infinite recursion, or heap overflows inside your local programs.</p>
+          <h2>5. Disclaimer & Limitation of Liability</h2>
+          <p>RunCode is provided on an "AS IS" and "AS AVAILABLE" basis, without any warranties of any kind. We are not responsible for any homework score reductions, exam script failures, compiler runtime exceptions, storage corruption, data losses, or system errors resulting from the execution of incorrect loops, infinite recursion, or heap overflows inside your local programs.</p>
 
-        <h2>6. Inquiries and Contact</h2>
-        <p>If you have any questions or require legal clarifications regarding these educational Terms of Service, please write to us at:</p>
-        <p style="font-family:var(--font-mono); font-weight:700; color:var(--accent-color)">inventinginsaan@gmail.com</p>
+          <h2>6. Inquiries and Contact</h2>
+          <p>If you have any questions or require legal clarifications regarding these educational Terms of Service, please write to us at:</p>
+          <p style="font-family:var(--font-mono); font-weight:700; color:var(--accent-color)">inventinginsaan@gmail.com</p>
+        </div>
       </div>
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -171,5 +167,8 @@
     </div>
   </footer>
 
+  <!-- Scripts integration -->
+  <script src="js/animations.js"></script>
+  <script src="js/navigation.js"></script>
 </body>
 </html>
