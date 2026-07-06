@@ -14,247 +14,6 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/animations.css">
-  
-  <!-- Inline custom styles for static layout spacing -->
-  <style>
-    /* Section containers spacing */
-    .hero-section {
-      padding: 96px 0 110px 0;
-      text-align: center;
-      position: relative;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 16px;
-      border-radius: 9999px;
-      border: 1px solid rgba(14, 165, 233, 0.3);
-      background-color: rgba(14, 165, 233, 0.05);
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent-color);
-      margin-bottom: 24px;
-    }
-    .hero-heading {
-      font-size: 48px;
-      margin-bottom: 24px;
-      line-height: 1.1;
-    }
-    .hero-heading span {
-      background: linear-gradient(to right, #0EA5E9, #38BDF8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-desc {
-      font-size: 18px;
-      max-width: 650px;
-      margin: 0 auto 40px auto;
-    }
-    .hero-ctas {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 64px;
-    }
-    
-    /* Stats Row */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      max-width: 800px;
-      margin: 0 auto 80px auto;
-      border-top: 1px solid rgba(42, 47, 69, 0.3);
-      border-bottom: 1px solid rgba(42, 47, 69, 0.3);
-      padding: 24px 0;
-    }
-    .stat-card {
-      text-align: center;
-    }
-    .stat-value {
-      font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--text-white);
-    }
-    .stat-label {
-      font-size: 11px;
-      color: var(--text-gray);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-top: 4px;
-    }
-
-    /* Compiler Mockup styling */
-    .mockup-container {
-      width: 100%;
-      max-width: 850px;
-      margin: 0 auto;
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-      background-color: rgba(30, 34, 53, 0.3);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-      overflow: hidden;
-    }
-    .mockup-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 24px;
-      border-b: 1px solid rgba(42, 47, 69, 0.6);
-      background-color: rgba(13, 13, 18, 0.4);
-    }
-    .mockup-dots {
-      display: flex;
-      gap: 8px;
-    }
-    .dot {
-      height: 10px;
-      width: 10px;
-      border-radius: 50%;
-    }
-    .dot-red { background-color: #EF4444; }
-    .dot-yellow { background-color: #F59E0B; }
-    .dot-green { background-color: #10B981; }
-    
-    .mockup-file {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--text-gray);
-      margin-left: 12px;
-    }
-    .mockup-tabs {
-      display: flex;
-      border-b: 1px solid rgba(42, 47, 69, 0.3);
-      background-color: rgba(13, 13, 18, 0.2);
-    }
-    .static-lang-tab {
-      padding: 12px 20px;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--text-gray);
-      background: transparent;
-      border: none;
-      border-right: 1px solid rgba(42, 47, 69, 0.3);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .static-lang-tab.active {
-      background-color: rgba(30, 34, 53, 0.5);
-      color: var(--text-white);
-      border-bottom: 2px solid var(--accent-color);
-    }
-    .mockup-split {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      min-height: 350px;
-    }
-    .editor-pane {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      border-right: 1px solid rgba(42, 47, 69, 0.3);
-    }
-    .editor-pane textarea {
-      width: 100%;
-      flex-grow: 1;
-      background: transparent;
-      border: none;
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: #E2E8F0;
-      resize: none;
-      line-height: 1.6;
-    }
-    .editor-pane textarea:focus {
-      outline: none;
-    }
-    .editor-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 16px;
-      border-top: 1px solid rgba(42, 47, 69, 0.2);
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--text-gray);
-    }
-    .console-pane {
-      background-color: #0D0D12;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .console-pane pre {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: #CBD5E1;
-      white-space: pre-wrap;
-      line-height: 1.5;
-    }
-
-    /* Grid layouts */
-    .section-title {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-    .section-title h2 {
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
-    .section-title p {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 56px;
-    }
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    /* Accordion FAQ */
-    .faq-wrapper {
-      max-width: 750px;
-      margin: 0 auto;
-    }
-    .faq-item {
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      background-color: rgba(30, 34, 53, 0.2);
-      margin-bottom: 16px;
-      overflow: hidden;
-    }
-    .faq-trigger {
-      width: 100%;
-      padding: 20px;
-      text-align: left;
-      font-family: var(--font-display);
-      font-weight: 700;
-      color: var(--text-white);
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .faq-content {
-      padding: 0 20px 20px 20px;
-      font-size: 14px;
-      color: var(--text-gray);
-      line-height: 1.6;
-      display: none;
-    }
-  </style>
 </head>
 <body>
 
@@ -293,6 +52,31 @@
 
       <div class="header-ctas desktop-only">
         <a href="https://play.google.com" target="_blank" class="cta-button cta-primary">Download App</a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="static-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+        <svg id="menu-icon-open" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:none">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="static-mobile-menu" class="mobile-menu">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="index.html#features" class="mobile-nav-link">Features</a>
+        <a href="support.html" class="mobile-nav-link">Support</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="privacy.html" class="mobile-nav-link">Privacy Policy</a>
+        <a href="terms.html" class="mobile-nav-link">Terms of Service</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="https://play.google.com" target="_blank" class="cta-button cta-primary" style="width: 100%;">Download App</a>
       </div>
     </div>
   </header>
