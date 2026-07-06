@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help & Support - RunCode IDE</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .support-section {
+      padding: 80px 0;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .support-card {
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      background-color: rgba(30, 34, 53, 0.2);
+      margin-bottom: 24px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .form-control {
+      width: 100%;
+      background-color: #0D0D12;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 12px;
+      color: var(--text-white);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Static header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo-wrapper" onclick="window.location.href='index.html'">
+        <div class="logo-icon">
+          &lt;/&gt;
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">RunCode</span>
+          <span class="logo-subtitle">Mobile IDE</span>
+        </div>
+      </div>
+      
+      <nav class="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#features" class="nav-link">Features</a></li>
+          <li><a href="support.html" class="nav-link active">Support</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-ctas desktop-only">
+        <a href="https://play.google.com" target="_blank" class="cta-button cta-primary">Download App</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Support Portal Section -->
+  <section class="support-section">
+    <div class="container">
+      <a href="index.html" class="cta-button cta-secondary" style="margin-bottom:48px; font-size:12px">&larr; Back to Homepage</a>
+      
+      <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))">
+        
+        <!-- Left info guidelines -->
+        <div>
+          <h1 style="font-size:32px; margin-bottom:12px">Help & Support</h1>
+          <p style="margin-bottom:32px; font-size:15px">Get assistance with custom packages, compiling bugs, and school licensing programs.</p>
+          
+          <div class="support-card">
+            <h3 style="color:var(--accent-color); font-size:16px; margin-bottom:8px">Bug Reports</h3>
+            <p style="font-size:13px; line-height:1.5">When reporting code execution crashes or compilation failures, please copy-paste the terminal traceback, mention your Android device model, and detail your workspace directory hierarchy.</p>
+          </div>
+
+          <div class="support-card">
+            <h3 style="color:var(--accent-color); font-size:16px; margin-bottom:8px">Response Expectation</h3>
+            <p style="font-size:13px; line-height:1.5">We are a small development team but we prioritize educational and student coursework inquiries. Our standard support response window is within 24 to 48 working hours.</p>
+          </div>
+        </div>
+
+        {/* Right Form mock */}
+        <div class="card" style="padding:32px">
+          <h2 style="font-size:20px; margin-bottom:8px">Submit Support Ticket</h2>
+          <p style="font-size:13px; margin-bottom:24px">Fill out our academic support dispatch form to send detailed reports directly to our engineers.</p>
+          
+          <form id="static-support-form" onsubmit="event.preventDefault(); document.getElementById('ticket-success').style.display='block'; this.style.display='none';">
+            <div class="form-group">
+              <label>Academic Email</label>
+              <input type="email" required class="form-control" placeholder="name@university.edu">
+            </div>
+            
+            <div class="form-group">
+              <label>Issue Category</label>
+              <select class="form-control" style="appearance: none; background-image: radial-gradient(circle, var(--accent-color) 2px, transparent 3px); background-repeat: no-repeat; background-position: right 12px center;">
+                <option>General Inquiries</option>
+                <option>Local Compiler Failures</option>
+                <option>File Explorer / Storage Issues</option>
+                <option>Educational Customization</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Message Body</label>
+              <textarea required class="form-control" rows="5" placeholder="Detailed explanation..."></textarea>
+            </div>
+
+            <button type="submit" class="cta-button cta-primary" style="width:100%; justify-content:center; padding:12px">Send Support Message</button>
+          </form>
+
+          <div id="ticket-success" style="display:none; text-align:center; padding:40px 0" class="fade-in">
+            <span style="font-size:48px">🚀</span>
+            <h3 style="margin-top:16px; font-size:18px">Ticket Transmitted!</h3>
+            <p style="font-size:13px; margin-top:8px">Your academic support inquiry was successfully routed to the compiler team. We will write back shortly.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo-wrapper">
+            <div class="logo-icon">&lt;/&gt;</div>
+            <span class="logo-title" style="font-size:18px">RunCode</span>
+          </div>
+          <p class="footer-desc">Professional mobile compiler and code editor designed specifically for student laboratories and computer science course studies.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-col-title">Documentation</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="support.html" class="footer-link">Technical Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html" class="footer-link">Partnerships</a></li>
+            <li><a href="mailto:inventinginsaan@gmail.com" class="footer-link">Email Team</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 RunCode IDE. All rights reserved.</span>
+        <span>Made for high schools and universities globally.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

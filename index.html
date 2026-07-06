@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RunCode - Professional Mobile IDE & Code Editor for Students</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="RunCode - Professional Mobile IDE & Code Editor for Students">
+  <meta name="description" content="Write, compile, and execute program scripts offline on Android. The ultimate light-weight IDE supporting Python, Java, C, C++, JavaScript, HTML, and CSS for computer science courses.">
+  <meta name="keywords" content="RunCode, Mobile IDE, Android code editor, offline compiler, Python IDE, C C++ compiler, Java mobile workspace, CS student editor">
+  
+  <!-- Custom stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <!-- Inline custom styles for static layout spacing -->
+  <style>
+    /* Section containers spacing */
+    .hero-section {
+      padding: 96px 0 110px 0;
+      text-align: center;
+      position: relative;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      border: 1px solid rgba(14, 165, 233, 0.3);
+      background-color: rgba(14, 165, 233, 0.05);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-color);
+      margin-bottom: 24px;
+    }
+    .hero-heading {
+      font-size: 48px;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+    .hero-heading span {
+      background: linear-gradient(to right, #0EA5E9, #38BDF8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 18px;
+      max-width: 650px;
+      margin: 0 auto 40px auto;
+    }
+    .hero-ctas {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+    
+    /* Stats Row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto 80px auto;
+      border-top: 1px solid rgba(42, 47, 69, 0.3);
+      border-bottom: 1px solid rgba(42, 47, 69, 0.3);
+      padding: 24px 0;
+    }
+    .stat-card {
+      text-align: center;
+    }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text-white);
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+
+    /* Compiler Mockup styling */
+    .mockup-container {
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      background-color: rgba(30, 34, 53, 0.3);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+    .mockup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      border-b: 1px solid rgba(42, 47, 69, 0.6);
+      background-color: rgba(13, 13, 18, 0.4);
+    }
+    .mockup-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .dot {
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+    }
+    .dot-red { background-color: #EF4444; }
+    .dot-yellow { background-color: #F59E0B; }
+    .dot-green { background-color: #10B981; }
+    
+    .mockup-file {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-gray);
+      margin-left: 12px;
+    }
+    .mockup-tabs {
+      display: flex;
+      border-b: 1px solid rgba(42, 47, 69, 0.3);
+      background-color: rgba(13, 13, 18, 0.2);
+    }
+    .static-lang-tab {
+      padding: 12px 20px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-gray);
+      background: transparent;
+      border: none;
+      border-right: 1px solid rgba(42, 47, 69, 0.3);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .static-lang-tab.active {
+      background-color: rgba(30, 34, 53, 0.5);
+      color: var(--text-white);
+      border-bottom: 2px solid var(--accent-color);
+    }
+    .mockup-split {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      min-height: 350px;
+    }
+    .editor-pane {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid rgba(42, 47, 69, 0.3);
+    }
+    .editor-pane textarea {
+      width: 100%;
+      flex-grow: 1;
+      background: transparent;
+      border: none;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: #E2E8F0;
+      resize: none;
+      line-height: 1.6;
+    }
+    .editor-pane textarea:focus {
+      outline: none;
+    }
+    .editor-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid rgba(42, 47, 69, 0.2);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-gray);
+    }
+    .console-pane {
+      background-color: #0D0D12;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .console-pane pre {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #CBD5E1;
+      white-space: pre-wrap;
+      line-height: 1.5;
+    }
+
+    /* Grid layouts */
+    .section-title {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .section-title h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .section-title p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    /* Accordion FAQ */
+    .faq-wrapper {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      background-color: rgba(30, 34, 53, 0.2);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .faq-trigger {
+      width: 100%;
+      padding: 20px;
+      text-align: left;
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--text-white);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-content {
+      padding: 0 20px 20px 20px;
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Static header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo-wrapper" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <div class="logo-icon">
+          &lt;/&gt;
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">RunCode</span>
+          <span class="logo-subtitle">Mobile IDE</span>
+        </div>
+      </div>
+      
+      <nav class="nav-menu">
+        <ul class="nav-list">
+          <li><button class="nav-link active" onclick="window.scrollTo({top:0, behavior:'smooth'})">Home</button></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-ctas desktop-only">
+        <a href="https://play.google.com" target="_blank" class="cta-button cta-primary">Download App</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero section -->
+  <section class="hero-section">
+    <div class="container scroll-fade">
+      <div class="badge">🚀 Crafted for Computer Science Students</div>
+      <h1 class="hero-heading">Code Anywhere. <br><span>Learn Everywhere.</span></h1>
+      <p class="hero-desc">RunCode is a modern mobile IDE designed for high school and university students who want to build, test, and run code offline.</p>
+      
+      <div class="hero-ctas">
+        <a href="https://play.google.com" target="_blank" class="cta-button cta-primary">Download on Google Play</a>
+        <a href="privacy.html" class="cta-button cta-secondary">Privacy Policy</a>
+      </div>
+
+      <!-- Rating metrics row -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Offline Sandbox</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">7+</div>
+          <div class="stat-label">Languages</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">4.8★</div>
+          <div class="stat-label">Student Rated</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">0ms</div>
+          <div class="stat-label">Server Delay</div>
+        </div>
+      </div>
+
+      <!-- Mockup Compiler Frame -->
+      <div class="mockup-container floating-mock">
+        <div class="mockup-header">
+          <div class="mockup-dots">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <span class="mockup-file" id="static-file-label">main.py</span>
+          </div>
+          <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted)">Workspace: Sandbox</span>
+        </div>
+        
+        <div class="mockup-tabs">
+          <button class="static-lang-tab active" data-lang="python">Python</button>
+          <button class="static-lang-tab" data-lang="java">Java</button>
+          <button class="static-lang-tab" data-lang="cpp">C++</button>
+          <button class="static-lang-tab" data-lang="javascript">JavaScript</button>
+        </div>
+
+        <div class="mockup-split">
+          <div class="editor-pane">
+            <textarea id="static-code-editor" spellcheck="false"></textarea>
+            <div class="editor-footer">
+              <span>Line 1, Col 1 · UTF-8</span>
+              <div style="display:flex;gap:8px">
+                <button id="static-reset-btn" class="cta-button cta-secondary" style="padding:6px 12px;font-size:11px">Reset</button>
+                <button id="static-run-btn" class="cta-button cta-primary" style="padding:6px 16px;font-size:11px">Run Code</button>
+              </div>
+            </div>
+          </div>
+          <div class="console-pane">
+            <pre id="static-terminal-console"></pre>
+            <span style="font-family:var(--font-mono);font-size:9px;color:var(--text-muted)">Terminal: Console Sandbox v2.4</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Features grid section -->
+  <section id="features" style="padding:96px 0;border-top:1px solid rgba(42, 47, 69, 0.4)">
+    <div class="container scroll-fade">
+      <div class="section-title">
+        <h2>Premium App Features</h2>
+        <p>A native local development workspace engineered explicitly for the computer science curriculum.</p>
+      </div>
+      
+      <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))">
+        <div class="card">
+          <h3 style="font-size:18px;margin-bottom:12px;color:var(--accent-color)">Code Editor</h3>
+          <p style="font-size:14px">High-fidelity syntax highlighting, custom code sizes, line numbers, and dark themes modeled after standard JetBrains structures.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-size:18px;margin-bottom:12px;color:var(--accent-color)">Local Compiler</h3>
+          <p style="font-size:14px">Compile Python, C, C++, Java, and Javascript offline in seconds. Avoid VM connection queues or high data charges.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-size:18px;margin-bottom:12px;color:var(--accent-color)">Student Boilerplates</h3>
+          <p style="font-size:14px">Includes quick start assign directories and standard college lab configurations so you can jump directly into learning loops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supported Languages -->
+  <section style="padding:96px 0;background-color:rgba(30, 34, 53, 0.1);border-top:1px solid rgba(42, 47, 69, 0.4)">
+    <div class="container scroll-fade">
+      <div class="section-title">
+        <h2>Supported Languages</h2>
+        <p>Learn, practice, and compile multiple computer science educational environments offline.</p>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px">
+        <div class="card" style="padding:20px;text-align:center;min-width:130px;flex:1">
+          <span style="font-family:var(--font-mono);font-weight:700">.py</span>
+          <h4 style="margin-top:10px;font-size:14px">Python 3</h4>
+        </div>
+        <div class="card" style="padding:20px;text-align:center;min-width:130px;flex:1">
+          <span style="font-family:var(--font-mono);font-weight:700">.java</span>
+          <h4 style="margin-top:10px;font-size:14px">Java OOP</h4>
+        </div>
+        <div class="card" style="padding:20px;text-align:center;min-width:130px;flex:1">
+          <span style="font-family:var(--font-mono);font-weight:700">.cpp</span>
+          <h4 style="margin-top:10px;font-size:14px">C++20</h4>
+        </div>
+        <div class="card" style="padding:20px;text-align:center;min-width:130px;flex:1">
+          <span style="font-family:var(--font-mono);font-weight:700">.c</span>
+          <h4 style="margin-top:10px;font-size:14px">ANSI C</h4>
+        </div>
+        <div class="card" style="padding:20px;text-align:center;min-width:130px;flex:1">
+          <span style="font-family:var(--font-mono);font-weight:700">.js</span>
+          <h4 style="margin-top:10px;font-size:14px">ES6 Script</h4>
+        </div>
+        <div class="card" style="padding:20px;text-align:center;min-width:130px;flex:1">
+          <span style="font-family:var(--font-mono);font-weight:700">.html</span>
+          <h4 style="margin-top:10px;font-size:14px">HTML5 CSS</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion section -->
+  <section style="padding:96px 0;border-top:1px solid rgba(42, 47, 69, 0.4)">
+    <div class="container scroll-fade">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>Common inquiries about project folders, compilations, and educational pricing.</p>
+      </div>
+
+      <div class="faq-wrapper">
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'">
+            <span>What is RunCode?</span>
+            <span style="color:var(--accent-color)">+</span>
+          </button>
+          <div class="faq-content">RunCode is a standard educational mobile IDE built explicitly for Android devices to let high school and university students compile, execute, and save code offline.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'">
+            <span>Does it run entirely offline?</span>
+            <span style="color:var(--accent-color)">+</span>
+          </button>
+          <div class="faq-content">Yes, all compiler runtimes are compiled into the local Android application package, making compilation totally secure and functional without internet data packages.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'">
+            <span>Are my code files safe?</span>
+            <span style="color:var(--accent-color)">+</span>
+          </button>
+          <div class="faq-content">Completely. RunCode uses Google's standard Storage Access Framework. Your projects are stored locally on your own storage, and we never access, upload, or sell your files.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo-wrapper">
+            <div class="logo-icon">&lt;/&gt;</div>
+            <span class="logo-title" style="font-size:18px">RunCode</span>
+          </div>
+          <p class="footer-desc">Professional mobile compiler and code editor designed specifically for student laboratories and computer science course studies.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-col-title">Documentation</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="support.html" class="footer-link">Technical Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html" class="footer-link">Partnerships</a></li>
+            <li><a href="mailto:inventinginsaan@gmail.com" class="footer-link">Email Team</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 RunCode IDE. All rights reserved.</span>
+        <span>Made for high schools and universities globally.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts integration -->
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/navigation.js"></script>
+</body>
+</html>
