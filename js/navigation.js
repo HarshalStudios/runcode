@@ -1,5 +1,5 @@
 /* 
-  RunCode IDE - Navigation Controller
+  RunCoder IDE - Navigation Controller
   Powers smooth navigation tabs, active page highlights, and responsive mobile menu drawers.
 */
 
