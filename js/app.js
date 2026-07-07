@@ -1,5 +1,5 @@
 /* 
-  RunCode IDE - High-Fidelity Compiler & Emulator Simulator Engine
+  RunCoder IDE - High-Fidelity Compiler & Emulator Simulator Engine
   Syncs vanilla frontend with React MockupEditor.tsx state architectures.
 */
 
