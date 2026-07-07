@@ -1,5 +1,5 @@
 /* 
-  RunCode IDE - Scroll Entry Animations
+  RunCoder IDE - Scroll Entry Animations
   Triggers sleek fade-ins and translates when elements enter the screen.
 */
 
