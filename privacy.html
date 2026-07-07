@@ -1,167 +1,171 @@
-<h2>1. Introduction</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - RunCode IDE</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .doc-section {
+      padding: 80px 0;
+    }
+    .doc-card {
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      background-color: rgba(30, 34, 53, 0.2);
+      padding: 40px;
+      line-height: 1.7;
+      color: var(--text-gray);
+    }
+    .doc-card h2 {
+      color: var(--text-white);
+      margin: 32px 0 16px 0;
+      font-size: 20px;
+    }
+    .doc-card h2:first-of-type {
+      margin-top: 0;
+    }
+    .doc-card p {
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .doc-card ul {
+      margin-bottom: 24px;
+      padding-left: 24px;
+    }
+    .doc-card li {
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
 
-<p>
-RunCode ("we", "our", or "us") is an Android application designed for students, developers, and programming enthusiasts to write, edit, organize, and execute source code. This Privacy Policy explains what information we collect, how it is used, and how we protect your privacy when you use the RunCode application.
-</p>
+  <!-- Static header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo-wrapper" onclick="window.location.href='index.html'">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="rGradientHeader" x1="180" y1="150" x2="380" y2="415" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#38BDF8" />
+                <stop offset="45%" stop-color="#2563EB" />
+                <stop offset="100%" stop-color="#4F46E5" />
+              </linearGradient>
+            </defs>
+            <path d="M 205 150 H 320 C 380 150, 415 190, 415 240 C 415 290, 380 315, 320 315 C 320 315, 345 365, 375 415 H 315 L 265 315 H 235 L 212 415 H 150 Z M 255 195 L 238 275 H 290 C 315 275, 335 260, 335 240 C 335 220, 315 195, 290 195 Z" fill="url(#rGradientHeader)" />
+            <path d="M 258 220 L 275 235 L 258 250" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M 283 250 H 303" stroke="white" stroke-width="12" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">RunCode</span>
+          <span class="logo-subtitle">Offline Coding App</span>
+        </div>
+      </div>
+      
+      <nav class="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#features" class="nav-link">Features</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
 
-<h2>2. Your Projects and Files</h2>
+      <div class="header-ctas desktop-only">
+        <a href="https://play.google.com" target="_blank" class="cta-button cta-primary">Download App</a>
+      </div>
+    </div>
+  </header>
 
-<p>
-Your source code, projects, folders, and programming files remain your property. RunCode stores your workspace locally on your Android device using Android's Storage Access Framework (SAF).
-</p>
+  <!-- Privacy Policy Document Section -->
+  <section class="doc-section">
+    <div class="container">
+      <a href="index.html" class="cta-button cta-secondary" style="margin-bottom:32px; font-size:12px">&larr; Back to Homepage</a>
+      
+      <div class="doc-card">
+        <h1 style="color:var(--text-white); font-size:28px; margin-bottom:10px">Privacy Policy</h1>
+        <p style="font-family:var(--font-mono); font-size:11px; color:var(--accent-color); margin-bottom:40px">Last Updated: July 6, 2026</p>
+        
+        <h2>1. Ownership and Workspace Files</h2>
+        <p>At RunCode, we ensure that your computer science work, source files, and workspace files remain completely private, secure, and under your ownership. We do not read, upload, analyze, or transmit your private files or source code to our servers. All code files you create, edit, or compile in Python, Java, C, C++, JavaScript, HTML, or CSS are stored completely locally on your Android device.</p>
+        <ul>
+          <li><strong>Storage Access Framework (SAF):</strong> RunCode strictly utilizes Android's system SAF. We only access files or folders that you explicitly grant permission to within the system file chooser.</li>
+          <li><strong>No File Scanning:</strong> We do not scan your private files or directory structures for unauthorized purposes.</li>
+          <li><strong>Ownership:</strong> You own 100% of the code, scripts, projects, and educational files you write using RunCode.</li>
+        </ul>
 
-<p>
-The application can only access files and folders that you explicitly choose through Android's system file picker.
-</p>
+        <h2>2. Third-Party Infrastructure and Analytics</h2>
+        <p>To maintain high compiler speed and stability, we integrate standard Google/Firebase libraries inside the Android application package:</p>
+        <ul>
+          <li><strong>Firebase Analytics & Crashlytics:</strong> We collect anonymous telemetry logs, build performance timings, and application crash reports to debug interpreter exceptions and compiler failures.</li>
+          <li><strong>Google AdMob:</strong> We serve minimal, non-intrusive advertisements to help support free educational compilation. These comply with Google Play Family and student privacy standards.</li>
+          <li><strong>Google Play Billing:</strong> Processes standard purchases and renewals securely for our Premium Student tier and ad-free upgrades. No credit card information is seen or stored by us.</li>
+        </ul>
 
-<ul>
-<li><strong>Local Storage</strong> — Your projects remain stored on your own device.</li>
-<li><strong>User Controlled Access</strong> — RunCode only accesses files or folders you explicitly select.</li>
-<li><strong>No Background File Scanning</strong> — We never scan unrelated files stored on your device.</li>
-<li><strong>Your Ownership</strong> — You retain full ownership of every project and source file you create.</li>
-</ul>
+        <h2>3. No Selling of Data</h2>
+        <p>We will never sell, distribute, rent, or lease your personal metadata, source code, or telemetry logs to any third-party brokers, advertisers, or organizations. All diagnostic data collected via Google Services is used strictly for debugging app performance.</p>
 
-<h2>3. Cloud Code Execution</h2>
+        <h2>4. Privacy Contact & Inquiries</h2>
+        <p>If you have any questions, compliance inquiries, or suggestions regarding our Privacy Policy or your data rights, please email our lead developer directly:</p>
+        <p style="font-family:var(--font-mono); font-weight:700; color:var(--accent-color)">inventinginsaan@gmail.com</p>
+      </div>
+    </div>
+  </section>
 
-<p>
-When you press the <strong>Run</strong> button, RunCode securely sends your source code, selected programming language, and any standard input you provide to a remote code execution service for compilation and execution.
-</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo-wrapper" onclick="window.location.href='index.html'">
+            <div class="logo-icon">
+              <svg width="24" height="24" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="rGradientFooter" x1="180" y1="150" x2="380" y2="415" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#38BDF8" />
+                    <stop offset="45%" stop-color="#2563EB" />
+                    <stop offset="100%" stop-color="#4F46E5" />
+                  </linearGradient>
+                </defs>
+                <path d="M 205 150 H 320 C 380 150, 415 190, 415 240 C 415 290, 380 315, 320 315 C 320 315, 345 365, 375 415 H 315 L 265 315 H 235 L 212 415 H 150 Z M 255 195 L 238 275 H 290 C 315 275, 335 260, 335 240 C 335 220, 315 195, 290 195 Z" fill="url(#rGradientFooter)" />
+                <path d="M 258 220 L 275 235 L 258 250" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 283 250 H 303" stroke="white" stroke-width="12" stroke-linecap="round" />
+              </svg>
+            </div>
+            <span class="logo-title" style="font-size:18px">RunCode</span>
+          </div>
+          <p class="footer-desc">Professional mobile compiler and code editor designed specifically for student laboratories and computer science course studies.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-col-title">Documentation</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="support.html" class="footer-link">Technical Support</a></li>
+          </ul>
+        </div>
 
-<p>
-This transmission occurs only when you explicitly choose to execute your code. The request is sent securely using HTTPS encryption.
-</p>
+        <div>
+          <h4 class="footer-col-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html" class="footer-link">Partnerships</a></li>
+            <li><a href="mailto:inventinginsaan@gmail.com" class="footer-link">Email Team</a></li>
+          </ul>
+        </div>
+      </div>
 
-<p>
-RunCode does not associate execution requests with your identity, account, or personal information. We do not permanently store your source code on our own servers.
-</p>
+      <div class="footer-bottom">
+        <span>&copy; 2026 RunCode IDE. All rights reserved.</span>
+        <span>Made for high schools and universities globally.</span>
+      </div>
+    </div>
+  </footer>
 
-<h2>4. Information We Collect</h2>
-
-<p>
-RunCode collects only the minimum information necessary to improve application quality, reliability, and performance.
-</p>
-
-<ul>
-<li>Anonymous application usage analytics</li>
-<li>Crash reports</li>
-<li>Performance diagnostics</li>
-<li>Application version</li>
-<li>Android version</li>
-<li>Device model</li>
-<li>Advertising identifiers used by Google services</li>
-</ul>
-
-<p>
-We do not collect your personal documents, contacts, messages, photos, passwords, or locally stored programming projects.
-</p>
-
-<h2>5. Third-Party Services</h2>
-
-<p>
-RunCode relies on trusted third-party services to provide core functionality.
-</p>
-
-<ul>
-
-<li>
-<strong>Judge0 Code Execution Service</strong><br>
-Used to compile and execute source code submitted by the user. When code execution is requested, your source code, selected programming language, and standard input are securely transmitted to the execution service solely to generate execution results.
-</li>
-
-<li>
-<strong>Firebase Analytics</strong><br>
-Used to understand anonymous application usage and improve future versions of RunCode.
-</li>
-
-<li>
-<strong>Firebase Crashlytics</strong><br>
-Used to receive anonymous crash reports and diagnostics to improve application stability.
-</li>
-
-<li>
-<strong>Google AdMob</strong><br>
-Displays advertisements in the free version of RunCode. Google may process advertising identifiers according to Google's own Privacy Policy.
-</li>
-
-<li>
-<strong>Google Play Billing</strong><br>
-Processes optional in-app purchases securely through Google Play. RunCode never receives or stores your payment information.
-</li>
-
-</ul>
-
-<h2>6. Permissions</h2>
-
-<p>
-RunCode requests only the permissions necessary for its intended functionality.
-</p>
-
-<ul>
-
-<li>
-<strong>Internet</strong><br>
-Required for cloud code execution, analytics, crash reporting, advertisements, and optional online services.
-</li>
-
-<li>
-<strong>Storage Access Framework (SAF)</strong><br>
-Used only after you explicitly select files or folders to open or save.
-</li>
-
-</ul>
-
-<p>
-RunCode does not request unnecessary or invasive Android permissions.
-</p>
-
-<h2>7. Advertising</h2>
-
-<p>
-The free version of RunCode may display advertisements provided by Google AdMob. Google may collect limited device identifiers and advertising information according to Google's own Privacy Policy.
-</p>
-
-<p>
-RunCode does not sell your personal information to advertisers.
-</p>
-
-<h2>8. Data Security</h2>
-
-<p>
-Protecting your projects and privacy is one of our highest priorities.
-</p>
-
-<ul>
-
-<li>Your workspace files remain stored locally on your device.</li>
-
-<li>Network communication uses secure HTTPS encryption.</li>
-
-<li>RunCode follows Android security best practices.</li>
-
-<li>No user account is required to use RunCode.</li>
-
-<li>We do not maintain a cloud database of your programming projects.</li>
-
-</ul>
-
-<h2>9. Children's Privacy</h2>
-
-<p>
-RunCode is intended for students, educators, developers, and programming learners. The application does not knowingly collect personal information from children.
-</p>
-
-<h2>10. Changes to this Privacy Policy</h2>
-
-<p>
-We may update this Privacy Policy from time to time. Any future changes will be published on this page together with the updated revision date.
-</p>
-
-<h2>11. Contact Us</h2>
-
-<p>
-If you have any questions regarding this Privacy Policy or your privacy rights, you may contact us at:
-</p>
-
-<p style="font-family:var(--font-mono);font-weight:700;color:var(--accent-color)">
-inventinginsaan@gmail.com
-</p>
+</body>
+</html>
