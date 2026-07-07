@@ -1,14 +1,14 @@
-# RunCode IDE - Official Static Website
+# RunCoder IDE - Official Static Website
 
-This folder contains the complete, production-ready, highly-optimized static website for the **RunCode Android IDE**.
+This folder contains the complete, production-ready, highly-optimized static website for the **RunCoder Android IDE**.
 
 ## 🚀 Instant Deployment with GitHub Pages
 
 This project is built from scratch using pure vanilla **HTML5, CSS3, and modern JavaScript**, as requested. It does not require any compilers, bundlers, NPM, or external build processes.
 
 To deploy this live on the web:
-1. Create a new repository on GitHub (e.g., `runcode-website`).
-2. Copy all the contents of this `RunCode/` folder directly into the root of your new repository.
+1. Create a new repository on GitHub (e.g., `RunCoder-website`).
+2. Copy all the contents of this `RunCoder/` folder directly into the root of your new repository.
 3. Commit and push your changes:
    ```bash
    git add .
@@ -24,7 +24,7 @@ To deploy this live on the web:
 ## 📂 File Structure
 
 ```text
-RunCode/
+RunCoder/
 ├── index.html            # Core Landing Page & Slogan Section
 ├── privacy.html          # Legal Privacy Policy Document
 ├── terms.html            # Terms of Service & Educational Guidelines
